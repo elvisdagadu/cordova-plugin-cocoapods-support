@@ -14,7 +14,7 @@ module.exports = function (context) {
         return;
     }
 
-    var Q = context.requireCordovaModule('q');
+    var Q = require('q');
     var podfileContents = [];
     var rootPath = context.opts.projectRoot;
     var configXmlPath = path.join(rootPath, 'config.xml');
@@ -348,7 +348,7 @@ module.exports = function (context) {
     }
 
     function getConfigParser(context, config) {
-        var semver = context.requireCordovaModule('semver');
+        var semver = require('semver');
         var ConfigParser;
 
         if (semver.lt(context.opts.cordova.version, '5.4.0')) {
